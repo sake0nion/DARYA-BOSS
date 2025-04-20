@@ -1,5 +1,5 @@
 const noteInput = document.getElementById("note-text");
-const tagInput = document.getElementById("note-tag");
+const tagInput = document.getElementById("note-tags");
 const addNoteBtn = document.getElementById("add-note");
 const noteList = document.getElementById("note-list");
 const tagSelect = document.getElementById("tag-select");
