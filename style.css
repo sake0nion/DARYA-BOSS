@@ -1,0 +1,152 @@
+/* === Базовая стилизация === */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --note-bg: #f0f0f0;
+    --accent: #6200ea;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --note-bg: #1f1f1f;
+    --accent: #bb86fc;
+}
+
+* {
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* === Шапка === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+#toggle-theme {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* === Добавление заметки === */
+.note-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.note-input input {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: var(--note-bg);
+    color: var(--text-color);
+}
+
+.note-input button {
+    padding: 0.7rem;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.note-input button:hover {
+    transform: scale(1.05);
+}
+
+/* === Теги === */
+#tag-filter {
+    margin-bottom: 1rem;
+}
+
+#tag-select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* === Список заметок === */
+#note-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.note-item {
+    background-color: var(--note-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.note-text {
+    flex-grow: 1;
+}
+
+.note-tags {
+    margin-top: 0.5rem;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.note-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.note-actions button {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* === Анимация === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Адаптив === */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .note-input input, .note-input button {
+        font-size: 0.9rem;
+    }
+}
