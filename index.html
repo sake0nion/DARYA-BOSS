@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мои Заметки</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заметки</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
 
-    <!-- Переключатель темы -->
-    <button id="theme-toggle" title="Переключить тему">🌙 / ☀️</button>
+    <header>
+        <h1>📝 Мои заметки</h1>
+        <button id="toggle-theme">🌙 Тема</button>
+    </header>
 
-    <!-- Заголовок -->
-    <h1>Заметки</h1>
+    <main>
+        <div class="note-input">
+            <input type="text" id="note-text" placeholder="Введите заметку...">
+            <input type="text" id="note-tags" placeholder="#тег #важно (необязательно)">
+            <button id="add-note">Добавить</button>
+        </div>
 
-    <!-- Форма добавления заметки -->
-    <form id="note-form">
-      <input type="text" id="note-text" placeholder="Введите заметку..." required />
-      <input type="text" id="note-tag" placeholder="Тег (например, #работа)" />
-      <button type="submit">Добавить</button>
-    </form>
+        <div id="tag-filter">
+            <span>Показать по тегу:</span>
+            <select id="tag-select">
+                <option value="all">Все</option>
+            </select>
+        </div>
 
-    <!-- Фильтрация по тегу -->
-    <div class="filter-container">
-      <label for="tag-filter">Фильтр по тегу:</label>
-      <input type="text" id="tag-filter" placeholder="#тег" />
-    </div>
+        <ul id="note-list"></ul>
+    </main>
 
-    <!-- Список заметок -->
-    <ul id="note-list"></ul>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
